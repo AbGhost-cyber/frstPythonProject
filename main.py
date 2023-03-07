@@ -1,3 +1,7 @@
+from MyLib import is_numeric
+import numpy as np
+
+
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
@@ -67,6 +71,36 @@ def sorted_list():
     print(initial_list)
 
 
+# def add(x, y):
+#     return x + y
+
+def test(**args):
+    s = 0
+    for i in args:
+        s += args[i]
+    return s
+
+
+def dict_test():
+    dictionary = {"apple": 44, "cherry": 22, "avocado": 22}
+    for key in dictionary.keys():
+        if not key.startswith("a"):
+            continue
+        print(key)
+
+
+def with_default_values(num=4):
+    print(num)
+
+
+def num_py_examples():
+    a = np.array([1, 2, 3, 4])
+    b = np.array([[1, 2, 4, 4], [3, 4, 0, 9]])
+    # shape = (dimension, size)
+    # print(b.shape[1])
+    for i in np.arange(0, 10, 3):
+        print(i)
+
 
 if __name__ == '__main__':
-    sorted_list()
+    num_py_examples()
