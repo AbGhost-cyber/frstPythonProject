@@ -95,11 +95,10 @@ def with_default_values(num=4):
 
 def num_py_examples():
     a = np.array([1, 2, 3, 4])
-    b = np.array([[1, 2, 4, 4], [3, 4, 0, 9]])
-    # shape = (dimension, size)
+    b = np.array([[1, 2, 4, 4], [3, 4, 0, 9], [1,1,1,1]])
+    # shape = (rows, columns)
     # print(b.shape[1])
-    for i in np.arange(0, 10, 3):
-        print(i)
+    print(b.shape)
 
 
 if __name__ == '__main__':
