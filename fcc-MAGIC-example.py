@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import RandomOverSampler
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report
 
 cols = ['fLength', 'fWidth', 'fSize', 'fConc', 'fConc1', 'fAsym', 'fM3Long', 'fM3Trans', 'fAlpha', 'fDist', "class"]
 df = pd.read_csv('magic04.data', names=cols)
@@ -39,6 +40,7 @@ knn_model = KNeighborsClassifier(n_neighbors=1)
 knn_model.fit(X_train, y_train)
 y_predict = knn_model.predict(X_test)
 
+
 def plot():
     for label in cols[:-1]:
         plt.hist(df[df["class"] == 1][label], color='blue', label='gamma', alpha=0.7, density=True)
@@ -51,4 +53,4 @@ def plot():
 
 
 if __name__ == '__main__':
-    print(y_predict)
+    print(classification_report(y_test, y_predict))
